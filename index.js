@@ -94,6 +94,8 @@ async function askGemini(chatId, userMessage) {
     conversations[chatId] = conversations[chatId].slice(-20);
   }
 
+  console.log("Calling Gemini with key prefix:", GEMINI_API_KEY?.slice(0, 8));
+
   const response = await fetch(GEMINI_API, {
     method: "POST",
     headers: { "Content-Type": "application/json" },
@@ -103,9 +105,11 @@ async function askGemini(chatId, userMessage) {
     }),
   });
 
-const data = await response.json();
-console.log("Gemini response:", JSON.stringify(data));
-const reply = data.candidates?.[0]?.content?.parts?.[0]?.text || "Sorry, I could not process that.";
+  const data = await response.json();
+  console.log("Gemini status:", response.status);
+  console.log("Gemini response:", JSON.stringify(data).slice(0, 500));
+
+  const reply = data.candidates?.[0]?.content?.parts?.[0]?.text || "Sorry, I could not process that.";
 
   conversations[chatId].push({ role: "model", parts: [{ text: reply }] });
 
