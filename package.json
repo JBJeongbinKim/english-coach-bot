@@ -1,0 +1,14 @@
+{
+  "name": "english-coach-bot",
+  "version": "1.0.0",
+  "description": "Telegram English Coach Bot powered by Claude",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "dependencies": {
+    "express": "^4.18.2",
+    "node-fetch": "^3.3.2"
+  }
+}
