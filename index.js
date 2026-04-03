@@ -103,8 +103,9 @@ async function askGemini(chatId, userMessage) {
     }),
   });
 
-  const data = await response.json();
-  const reply = data.candidates?.[0]?.content?.parts?.[0]?.text || "Sorry, I could not process that.";
+const data = await response.json();
+console.log("Gemini response:", JSON.stringify(data));
+const reply = data.candidates?.[0]?.content?.parts?.[0]?.text || "Sorry, I could not process that.";
 
   conversations[chatId].push({ role: "model", parts: [{ text: reply }] });
 
