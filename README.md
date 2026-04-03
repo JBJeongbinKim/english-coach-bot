@@ -43,7 +43,7 @@ Railway is a free hosting platform. No credit card needed for the free tier.
    - If you don't want to use GitHub, click **Empty Project** → **Add Service** → **Empty Service**
 3. In the service settings, go to **Variables** and add:
    - `TELEGRAM_TOKEN` = your token from Step 1
-   - `ANTHROPIC_API_KEY` = your key from Step 2
+   - `GEMINI_API_KEY` = your key from Step 2
 4. Go to **Settings** → **Networking** → **Generate Domain**
    - Copy the domain URL, e.g. `https://english-coach-bot.up.railway.app`
 5. Upload or paste the code files (index.js, package.json) into the service
